@@ -1,26 +1,206 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fDO-sA-ViD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
-        <scene sceneID="5">
+        <!--Set Game View Controller - SetCardGame-->
+        <scene sceneID="BJT-Jm-x0C">
             <objects>
-                <viewController id="2" customClass="CardGameViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                <viewController id="aJD-fF-lLe" customClass="SetGameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3dQ-BE-K3U">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="SetCardGame" id="J1c-ic-Ncp"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tqs-IM-GUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="754" y="368"/>
+        </scene>
+        <!--Playing Game View Controller - PlayingCardGame-->
+        <scene sceneID="j02-pv-aH3">
+            <objects>
+                <viewController id="28f-b2-E1z" customClass="PlayingGameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gsI-9a-d5V">
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zt-qI-lhk">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="gow-g6-Arb"/>
+                                    <constraint firstAttribute="height" constant="36" id="te3-sD-Jpl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bZ-EE-Jsb">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="DNs-A2-Kdb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXR-qy-fF9">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Deal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetGame:" destination="28f-b2-E1z" eventType="touchUpInside" id="uWH-8y-5Ky"/>
+                                </connections>
+                            </button>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UTl-9p-g7f">
+                                <color key="backgroundColor" name="selectedControlColor" catalog="System" colorSpace="catalog"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="362" id="8Fk-4u-noa"/>
+                                    <constraint firstAttribute="width" constant="335" id="t30-KT-eGm"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sbj-BD-cua">
+                                    <size key="itemSize" width="75" height="85"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlayingCardCell" id="rbB-6Q-TwK" customClass="PlayingCardCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="85"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="85"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZEg-4x-vcH" customClass="PlayingCardView">
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="ZEg-4x-vcH" firstAttribute="bottom" secondItem="rbB-6Q-TwK" secondAttribute="bottom" type="default" id="ND0-5A-3GK"/>
+                                            <constraint firstItem="ZEg-4x-vcH" firstAttribute="top" secondItem="rbB-6Q-TwK" secondAttribute="top" type="default" id="NvZ-j4-LPA"/>
+                                            <constraint firstItem="ZEg-4x-vcH" firstAttribute="leading" secondItem="rbB-6Q-TwK" secondAttribute="leading" type="default" id="eS3-sG-j8e"/>
+                                            <constraint firstItem="ZEg-4x-vcH" firstAttribute="trailing" secondItem="rbB-6Q-TwK" secondAttribute="trailing" type="default" id="ga0-WL-PKO"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="playingCardView" destination="ZEg-4x-vcH" id="nag-Rw-8Ah"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="28f-b2-E1z" id="iWE-O3-xby"/>
+                                    <outletCollection property="gestureRecognizers" destination="aJ2-Rc-BfJ" appends="YES" id="LrS-cS-BYi"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UTl-9p-g7f" firstAttribute="centerX" secondItem="gsI-9a-d5V" secondAttribute="centerX" type="default" id="25U-7k-8eW"/>
+                            <constraint firstAttribute="bottom" secondItem="tXR-qy-fF9" secondAttribute="bottom" constant="3" id="Bfs-Wd-D4b"/>
+                            <constraint firstItem="3Zt-qI-lhk" firstAttribute="baseline" secondItem="0bZ-EE-Jsb" secondAttribute="baseline" type="default" id="Mk1-mb-1FE"/>
+                            <constraint firstAttribute="trailing" secondItem="0bZ-EE-Jsb" secondAttribute="trailing" constant="36" id="NBC-SV-a10"/>
+                            <constraint firstItem="UTl-9p-g7f" firstAttribute="top" secondItem="gsI-9a-d5V" secondAttribute="top" type="default" id="Pey-gO-m7C"/>
+                            <constraint firstItem="3Zt-qI-lhk" firstAttribute="top" secondItem="tXR-qy-fF9" secondAttribute="top" type="default" id="Q6e-eC-08m"/>
+                            <constraint firstItem="UTl-9p-g7f" firstAttribute="centerX" secondItem="tXR-qy-fF9" secondAttribute="centerX" type="default" id="m4n-xR-pNf"/>
+                            <constraint firstItem="3Zt-qI-lhk" firstAttribute="leading" secondItem="gsI-9a-d5V" secondAttribute="leading" constant="14" id="n7t-1D-ouB"/>
+                            <constraint firstItem="0bZ-EE-Jsb" firstAttribute="top" secondItem="tXR-qy-fF9" secondAttribute="top" type="default" id="yeT-VT-KRE"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="PlayingCardGame" id="jOw-vc-ajb"/>
+                    <connections>
+                        <outlet property="cardCollectionView" destination="UTl-9p-g7f" id="I5e-ET-qpD"/>
+                        <outlet property="resultLabel" destination="0bZ-EE-Jsb" id="LED-Fb-Cmf"/>
+                        <outlet property="scoreLabel" destination="3Zt-qI-lhk" id="lTY-ZZ-tak"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n1x-FN-V00" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aJ2-Rc-BfJ">
+                    <connections>
+                        <action selector="flipCard:" destination="28f-b2-E1z" id="eGD-ub-wFr"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="754" y="-285"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="7qQ-Mc-UmO">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="fDO-sA-ViD" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="2yQ-oL-H8l">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="28f-b2-E1z" kind="relationship" relationship="viewControllers" id="8hd-z6-qfG"/>
+                        <segue destination="aJD-fF-lLe" kind="relationship" relationship="viewControllers" id="RB3-KM-YuF"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bEC-25-6jr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6" y="-35"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CardGameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="flipCard:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="action" name="resetGame:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cardCollectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="resultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PlayingCardCollectionViewCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardCollectionViewCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="playingCardView" candidateClass="PlayingCardView"/>
+            </relationships>
+        </class>
+        <class className="PlayingCardView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingCardView.h"/>
+        </class>
+        <class className="PlayingGameViewController" superclassName="CardGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PlayingGameViewController.h"/>
+        </class>
+        <class className="SetGameViewController" superclassName="CardGameViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SetGameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="resetGame:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="resultLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
